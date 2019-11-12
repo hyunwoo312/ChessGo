@@ -42,6 +42,7 @@ type Game struct {
 	// white
 	turn   int32
 	player rune
+	moves  chan string
 }
 
 // x->kill, pawn x -> og col to mov col, O-O is castle short, O-O-O is castle long
@@ -62,11 +63,12 @@ func (g *Game) makeMove(m string) {
 func validMove(m string, g *Game) string {
 	b := g.board
 	nm := "check"
-	return nm
+	return nm + b[0][0]
 }
 
 ////////////////////
 func newGame() *Game {
+	c := make(chan string, 400)
 	g := Game{
 		[8][8]string{
 			/**
@@ -88,6 +90,7 @@ func newGame() *Game {
 		},
 		0,   //turn
 		'w', //side
+		c,   //channel of moves
 	}
 	return &g
 }
@@ -99,8 +102,10 @@ func start() {
 	for !(gameover) {
 		if checkmate || threefold || fiftymove {
 			gameover = true
-			// last player at default is the winner unless fiftymove
+			// last player at default is the winner
 		}
 	}
-	fmt.Println("Gamd Over")
+	// v , ok <- ch ok is false when all channel received and closed
+	close(g.moves)
+	fmt.Println("Game Over")
 }
