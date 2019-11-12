@@ -16,3 +16,6 @@ package chessgo
 type Client struct {
 	Address string
 }
+func something(args ...int) int {
+	return args
+}
