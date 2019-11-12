@@ -1,4 +1,4 @@
-# ChessGo
+# chessai
 
 ## Chess built in Go, Reinforcement Learning in Python
 
