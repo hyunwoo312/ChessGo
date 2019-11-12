@@ -12,7 +12,7 @@ import (
 	"io/ioutil"
 	"log"
 )
-template.ParseFiles
+template.ParseFiles = 
 // Client object to process the chess game
 type Client struct {
 	Address string

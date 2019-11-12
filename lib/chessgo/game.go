@@ -67,6 +67,26 @@ func validMove(m string, g *Game) string {
 }
 
 ////////////////////
+type Move struct {
+	ID     int
+	GameID int64
+}
+type MoveConfirmation struct {
+	Operation       Operation
+	DeltaOperations []Operation
+	Status          Game
+	Error           error
+}
+type MoveResult struct {
+	Status Game
+}
+
+////////////////////
+type API interface {
+	CreateGame
+}
+
+////////////////////
 func newGame() *Game {
 	c := make(chan string, 400)
 	g := Game{
