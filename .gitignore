@@ -1,0 +1,5 @@
+.venv/*
+lib/webpy/templates/*
+lib/webpy/static/*
+*.DS_store/
+*.vscode/
