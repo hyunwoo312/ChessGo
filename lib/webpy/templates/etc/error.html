@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ title }}</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <style>
+        html,
+        body {
+            background-color: rgb(197, 255, 185);
+            color: #00324b;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .full-height {
+            height: 100vh;
+        }
+        
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .position-ref {
+            position: relative;
+        }
+        
+        .content {
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 36px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+            <div class="title">{{ title }}</div>
+            <a class="btn btn-light" href="{{ url_for('home') }}">Perhaps click on me XD</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ title }}</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <style>
+        html,
+        body {
+            background-color: rgb(201, 13, 13);
+            color: #00324b;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .full-height {
+            height: 100vh;
+        }
+        
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .position-ref {
+            position: relative;
+        }
+        
+        .content {
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 36px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+            <div class="title">{{ title }}</div>
+            <small>Don't even dare touch (; ･`д･´)</small>
+            <a class="btn btn-light" href="{{ url_for('home') }}">GO BACK NOW</a>
+        </div>
+    </div>
+</body>
+
+</html>

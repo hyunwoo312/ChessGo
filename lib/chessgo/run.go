@@ -1,0 +1,5 @@
+package chessgo
+
+func main() {
+
+}

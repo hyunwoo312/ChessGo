@@ -1,0 +1,123 @@
+{% extends "layout.html" %} {% block content %}
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ current_user.username }}</h2>
+            <p class="text-secondary">{{ current_user.email }}</p>
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning btn-sm mt-1 mb-1 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Σ(ﾟДﾟ;≡｀ﾟдﾟ)
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#UpdateUsername">update username</button>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#UpdatePassword">update password</button>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#UpdatePfp">update profilepic</button>
+                    <a class="dropdown-item" href="http://japaneseemoticons.me/happy-emoticons/" target="_blank">っっっっっ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="UpdateUsername" tabindex="-1" role="dialog" aria-labelledby="UpdateUsernameLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="UpdateUsernameLabel">更新ましょか?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.username.label(class="form-control-label") }} {% if form.username.errors %} {{ form.username(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form.username.errors %}
+                                <span>{{ error }}</span> {% endfor %}
+                            </div>
+                            {% else %} {{ form.username(class="form-control form-control-lg") }} {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="form-group" align="right">
+                        {{ form.submit(class="btn btn-outline-dark") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="UpdatePassword" tabindex="-1" role="dialog" aria-labelledby="UpdatePasswordLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="UpdatePasswordLabel">更新ましょか?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form3.password.label(class="form-control-label") }} {% if form3.password.errors %} {{ form3.password(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form3.password.errors %}
+                                <span>{{ error }}</span> {% endfor %}
+                            </div>
+                            {% else %} {{ form3.password(class="form-control form-control-lg") }} {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form3.newpassword.label(class="form-control-label") }} {% if form3.newpassword.errors %} {{ form3.newpassword(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form3.newpassword.errors %}
+                                <span>{{ error }}</span> {% endfor %}
+                            </div>
+                            {% else %} {{ form3.newpassword(class="form-control form-control-lg") }} {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form3.confirm_password.label(class="form-control-label") }} {% if form3.confirm_password.errors %} {{ form3.confirm_password(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form3.confirm_password.errors %}
+                                <span>{{ error }}</span> {% endfor %}
+                            </div>
+                            {% else %} {{ form3.confirm_password(class="form-control form-control-lg") }} {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        {{ form3.submit(class="btn btn-outline-dark") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="UpdatePfp" tabindex="-1" role="dialog" aria-labelledby="UpdatePfpLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="UpdatePfpLabel">更新ましょか?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {{ form2.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form2.picture.label() }} {{ form2.picture(class="form-control-file") }} {% if form2.picture.errors %} {% for error in form2.picture.errors %}
+                            <span class="text-danger">{{ error }}</span> {% endfor %} {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="form-group" align="right">
+                        {{ form2.submit(class="btn btn-outline-dark") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
