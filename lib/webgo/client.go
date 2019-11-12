@@ -7,11 +7,12 @@ import (
 	//"crypto/aes"
 	//"bytes"
 	"net/http"
+	"html/template"
 	//"time"
 	"io/ioutil"
 	"log"
 )
-
+template.ParseFiles
 // Client object to process the chess game
 type Client struct {
 	Address string

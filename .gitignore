@@ -1,5 +1,3 @@
 .venv/*
-lib/webpy/templates/*
-lib/webpy/static/*
-*.DS_store/
+*.DS_Store
 *.vscode/
