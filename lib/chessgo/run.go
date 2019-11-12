@@ -1,5 +1,0 @@
-package chessgo
-
-func main() {
-
-}
