@@ -2,4 +2,4 @@
 
 ## Chess built in Go, Reinforcement Learning in Python
 
-trying to merge my flask webapp, also build AI with python, also make chess game in golang, it's chaotic at this moment
+i have numerous commits because i code on my macbook, windows desktop, and university computer lab computers (I move around a lot)
